@@ -1,17 +1,49 @@
-#include "head.h"
+#include "main.h"
+
 /**
- * 
+ * printAnimal - | Prototype For Main Function
+ * @format: Var
+ * Return: Void
  */
-int _printf(const char *format, ...)
+
+void printAnimal(const char *format, ...)
 {
-  int num;
-  if (format == NULL)
-    {
-      exit(98);
+
+    /* Starting Variables */
+    char *str = NULL;
+    int i;
+
+
+    /* Check If Format Exists */
+
+
+
+    /* Check For Null Byte*/
+
+
+
+    /* Check For % To Initiate Format */
+
+
+
+    /* Check For Format Specifier */
+
+
+
+    /* What If No %? */
+
+
+
+    /* Print String */
+
+
+
+
+
+    /* Iterate */
+
+        _putchar('\n');
+        format++;
+
     }
-  for (num = 0; format[num] != '\0'; num++)
-    {
-      write(1, format[num], 1);
-    }
-  return (0);
 }
