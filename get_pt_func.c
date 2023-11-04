@@ -4,22 +4,34 @@
  *
  * Return:
  */
-int (*get_pt_func(char *s)(char))
+char (*get_pt_func(char *s))(char)
 {
 	pt_f pts[] = {
 		{"c", pt_character},
-		{"s", pt_str},
-		{"%", pt_mod},
 		{NULL,NULL}};
 	int i = 0;
 
 	while (i < 3)
 	{
-		if (strcmp(s, pts[i].pt) == 0)
+		if (_strcmp(s, pts[i].c) == 0)
 		{
-			return (pts[i].f);
+			return (pts[i].p);
 		}
 	i++;
 	}
 	return (0);
+}
+
+int _strcmp(char *s1, char *s2)
+{
+  int loop;
+  while (s1[loop] != '\0')
+    {
+      if (s1[loop] == s2[loop])
+	{
+	  return (0);
+	}
+      loop++;
+    }
+  return (1);
 }
