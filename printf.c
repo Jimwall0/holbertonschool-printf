@@ -11,23 +11,17 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	i = 0;
+	/* Checking for Null byte */
 	while (*format != '\0')
 	{
+		/* Checking for % to initiate format */
 		if (*format == '%')
 		{
+			putchar(' ');
 			format++;
-
-			else
-			{
-				putchar(*format);
-				i++;
-			}
 		}
+	putchar(*format);
 	format++;
 	}
-	return (i):
-	va_end(args);
+	return (i);
 }
-
-
-
