@@ -4,12 +4,15 @@
  *
  * Return:
  */
+
 int (*get_pt_func(char *s))(void v)
 {
   
   pt_f pts[] = {
 		{"c", pt_character},
+		{"s", pt_str},
 		{NULL,NULL}};
+
   int i = 0;
   while (i < 1)
     {
