@@ -4,24 +4,25 @@
  *
  * Return:
  */
-int (*get_pt_func(char *s))(va_list)
+
+int (*get_pt_func(char *s))(void v)
 {
-	pt_f pts[] = {
+  
+  pt_f pts[] = {
 		{"c", pt_character},
 		{"s", pt_str},
 		{NULL,NULL}};
 
-	int i = 0;
-
-	while (i < 3)
+  int i = 0;
+  while (i < 1)
+    {
+      if (_strcmp(s, pts[i].c) == 0)
 	{
-		if (strcmp(s, == *pts[i].call))
-		{
-			return (pts[i].p);
-		}
-	i++;
+	  return (pts[i].p);
 	}
-	return (0);
+      i++;
+    }
+  return (0);
 }
 
 int _strcmp(char *s1, char *s2)
