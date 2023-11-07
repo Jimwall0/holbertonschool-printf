@@ -17,4 +17,5 @@ int (*get_pt_func(char s))(va_list args);
 int _strcmp(char s1, char s2);
 int dismay(va_list args);
 
+
 #endif

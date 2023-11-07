@@ -26,6 +26,7 @@ int dismay(va_list args)
 {
   (void)args;
   return (-1);
+
 }
 
 int _strcmp(char s1, char s2)
