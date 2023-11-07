@@ -6,15 +6,15 @@
 
 typedef struct pt
 {
-	char *call;
-	char (*p)();
+  char c;
+  int (*p)(va_list args);
 } pt_f;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void pt_character(char c);
-void pt_str(s);
-void pt_mod;
-int (*get_pt_func(char *s))(char)
+int pt_character(va_list args);
+int (*get_pt_func(char s))(va_list args);
+int _strcmp(char s1, char s2);
+int dismay(va_list args);
 
 #endif

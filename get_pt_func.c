@@ -4,34 +4,35 @@
  *
  * Return:
  */
-char (*get_pt_func(char *s))(char)
+int (*get_pt_func(char s))(va_list args)
 {
-	pt_f pts[] = {
-		{"c", pt_character},
-		{NULL,NULL}};
-	int i = 0;
-
-	while (i < 3)
+  pt_f pt[] = {
+	       {'c', pt_character},
+	       {'\0', dismay}
+  };
+  int i = 0;
+  while (i < 1)
+    {
+      if (_strcmp(s, pt[i].c) == 0)
 	{
-		if (_strcmp(s, pts[i].c) == 0)
-		{
-			return (pts[i].p);
-		}
-	i++;
+	  return (pt[i].p);
 	}
-	return (0);
+      i++;
+    }
+  return (pt[i].p);
 }
 
-int _strcmp(char *s1, char *s2)
+int dismay(va_list args)
 {
-  int loop;
-  while (s1[loop] != '\0')
+  (void)args;
+  return (-1);
+}
+
+int _strcmp(char s1, char s2)
+{
+  if (s1 == s2)
     {
-      if (s1[loop] == s2[loop])
-	{
-	  return (0);
-	}
-      loop++;
+      return (0);
     }
-  return (1);
+  return (-1);
 }
