@@ -6,22 +6,32 @@
 */
 int _printf(const char *format, ...)
 {
-	int i;
-	va_list args;
-	va_start(args, format);
-
-	i = 0;
-	/* Checking for Null byte */
-	while (*format != '\0')
+  int (*point)(va_list args);
+  int i = 0;
+  va_list args;
+  va_start(args, format);
+  if (*format != '\0')
+    {
+      while (*format != '\0')
 	{
-		/* Checking for % to initiate format */
-		if (*format == '%')
+	  if (*format == '%')
+	    {
+	      format++;
+	      point = get_pt_func(*format);
+	      if (point == NULL)
 		{
-			putchar(' ');
-			format++;
+		  return (-1);
 		}
-	putchar(*format);
-	format++;
+	      i += point(args);
+	    }
+	  else
+	    {
+	      _putchar(*format);
+	    }
+	  format++;
 	}
-	return (i);
+    }
+  va_end(args);
+  return(i);
 }
+
