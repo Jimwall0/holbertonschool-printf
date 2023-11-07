@@ -6,26 +6,31 @@
 */
 int _printf(const char *format, ...)
 {
-
-  int i;
+  int (*point)(va_list args);
+  int i = 0;
   va_list args;
   va_start(args, format);
-  
-  i = 0;
-  while (*format != '\0')
+  if (*format != '\0')
     {
-      if (*format == '%')
+      while (*format != '\0')
 	{
+	  if (*format == '%')
+	    {
+	      format++;
+	      point = get_pt_func(*format);
+	      if (point == NULL)
+		{
+		  return (-1);
+		}
+	      i += point(args);
+	    }
+	  else
+	    {
+	      _putchar(*format);
+	    }
 	  format++;
-	  get_pt_func(*format);
 	}
-      else
-	{
-	  _putchar(*format);
-	}
-      format++;
     }
-  _putchar('\n');
   va_end(args);
-  return (i);
+  return(i);
 }
