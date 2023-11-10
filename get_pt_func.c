@@ -1,39 +1,47 @@
 #include "main.h"
 /**
  * get_pt_func - calling the functions
- *
- * Return:
+ * @s: character specifier to be checked
+ * Return: pointer to a another function
  */
 int (*get_pt_func(char s))(va_list args)
 {
-  pt_f pt[] = {
-	       {'c', pt_character},
-	       {'\0', dismay}
-  };
-  int i = 0;
-  while (i < 1)
-    {
-      if (_strcmp(s, pt[i].c) == 0)
-	{
-	  return (pt[i].p);
-	}
-      i++;
-    }
-  return (pt[i].p);
+pt_f pt[] = {
+	     {'c', pt_character},
+	     {'\0', dismay}
+};
+int i = 0;
+while (i < 1)
+{
+if (_strcmp(s, pt[i].c) == 0)
+{
+return (pt[i].p);
 }
-
+i++;
+}
+return (pt[i].p);
+}
+/**
+ * dismay - returns -1
+ * @args: struct
+ * Return: -1
+ */
 int dismay(va_list args)
 {
-  (void)args;
-  return (-1);
-
+(void)args;
+return (-1);
 }
-
+/**
+ * _strcmp - compares two character with eachother
+ * @s1: first character
+ * @s2: second character
+ * Return: true or false
+ */
 int _strcmp(char s1, char s2)
 {
-  if (s1 == s2)
-    {
-      return (0);
-    }
-  return (-1);
+if (s1 == s2)
+{
+return (0);
+}
+return (-1);
 }
