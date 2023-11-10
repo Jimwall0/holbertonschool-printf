@@ -6,8 +6,8 @@
 
 typedef struct pt
 {
-  char c;
-  int (*p)(va_list args);
+char c;
+int (*p)(va_list args);
 } pt_f;
 
 int _putchar(char c);
