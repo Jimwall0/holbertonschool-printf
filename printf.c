@@ -19,7 +19,7 @@ if (*format == '%')/*looks for '%'*/
 {
 format++;/*moves forward when found*/
 point = get_pt_func(*format);/*grabs matching function*/
- i += point(args);
+i += point(args);
 if (point == NULL)
 {
 return (-1);
