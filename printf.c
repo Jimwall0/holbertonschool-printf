@@ -13,6 +13,8 @@ va_list args;/*makes a list for us to loop through*/
 va_start(args, format);/*specify what to loop through*/
 if (*format != '\0')/*checks if format is valid*/
 {
+/*adds length of format to i*/
+i += _strlen(format);
 while (*format != '\0')/*runs through format*/
 {
 if (*format == '%')/*looks for '%'*/
@@ -33,5 +35,20 @@ format++;
 }
 }
 va_end(args);
+return (i);
+}
+/**
+ * _strlen - grabs the lenght of a string
+ * @s: string being measured
+ * Return: int
+ */
+int _strlen(const char *s)
+{
+int i = 0;
+/*adds to i whenever we move*/
+while (s[i] != '\0')
+{
+i++;
+}
 return (i);
 }
