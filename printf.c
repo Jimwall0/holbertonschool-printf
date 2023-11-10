@@ -7,27 +7,27 @@
  */
 int _printf(const char *format, ...)
 {
-int (*point)(va_list args);
-int i = 0;
-va_list args;
-va_start(args, format);
-if (*format != '\0')
+int (*point)(va_list args);/*initialize a pointer function*/
+int i = 0;/*a counter to hold a value*/
+va_list args;/*makes a list for us to loop through*/
+va_start(args, format);/*specify what to loop through*/
+if (*format != '\0')/*checks if format is valid*/
 {
-while (*format != '\0')
+while (*format != '\0')/*runs through format*/
 {
-if (*format == '%')
+if (*format == '%')/*looks for '%'*/
 {
-format++;
-point = get_pt_func(*format);
+format++;/*moves forward when found*/
+point = get_pt_func(*format);/*grabs matching function*/
 if (point == NULL)
 {
 return (-1);
 }
-i += point(args);
+i += point(args);/*put our current output to a counter*/
 }
 else
 {
-_putchar(*format);
+_putchar(*format);/*prints character*/
 }
 format++;
 }
