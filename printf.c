@@ -13,11 +13,6 @@ va_list args;/*makes a list for us to loop through*/
 va_start(args, format);/*specify what to loop through*/
 if (*format != '\0')/*checks if format is valid*/
 {
-/*checks length and adds if it exists*/
-if (_strlen(format) > 0)
-{
-i += _strlen(format);
-}
 while (*format != '\0')/*runs through format*/
 {
 if (*format == '%')/*looks for '%'*/
@@ -29,6 +24,7 @@ if (point == NULL)
 return (-1);
 }
 i += point(args);/*put our current output to a counter*/
+i += _strlen(format) - 1;
 }
 else
 {
