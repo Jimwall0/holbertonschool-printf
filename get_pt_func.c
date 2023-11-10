@@ -6,19 +6,24 @@
  */
 int (*get_pt_func(char s))(va_list args)
 {
+/*structure holding our character specifier*/
 pt_f pt[] = {
 	     {'c', pt_character},
 	     {'\0', dismay}
 };
+/*intitialize count holder*/
 int i = 0;
+/*loops through list for match*/
 while (i < 1)
 {
+/*checks character then return fucntion*/
 if (_strcmp(s, pt[i].c) == 0)
 {
 return (pt[i].p);
 }
 i++;
 }
+/*return null pointer function*/
 return (pt[i].p);
 }
 /**
