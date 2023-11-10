@@ -19,18 +19,18 @@ if (*format == '%')/*looks for '%'*/
 {
 format++;/*moves forward when found*/
 point = get_pt_func(*format);/*grabs matching function*/
+i += point(args);
 if (point == NULL)
 {
 return (-1);
 }
-i += point(args);/*put our current output to a counter*/
-i += _strlen(format) - 1;
 }
 else
 {
 _putchar(*format);/*prints character*/
 }
 format++;
+i++;
 }
 }
 va_end(args);
