@@ -9,6 +9,7 @@ int (*get_pt_func(char s))(va_list args)
 /*structure holding our character specifier*/
 pt_f pt[] = {
 	     {'c', pt_character},
+	     {'s', pt_str},
 	     {'\0', dismay}
 };
 /*intitialize count holder*/
