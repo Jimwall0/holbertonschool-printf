@@ -8,6 +8,7 @@ int (*get_pt_func(char s))(va_list args)
 {
   pt_f pt[] = {
 	       {'c', pt_character},
+	       {'s', pt_str},
 	       {'\0', dismay}
   };
   int i = 0;
