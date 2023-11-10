@@ -24,7 +24,7 @@ if (point == NULL)
 return (-1);
 }
 i += point(args);/*put our current output to a counter*/
-i += _strlen(format);
+i += _strlen(format) - 1;
 }
 else
 {
@@ -34,7 +34,7 @@ format++;
 }
 }
 va_end(args);
-return (i - 1);
+return (i);
 }
 /**
  * _strlen - grabs the lenght of a string
