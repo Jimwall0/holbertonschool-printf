@@ -1,7 +1,8 @@
 #include "main.h"
 /**
-* pt_char - char specifier
-* Return: ..
+* pt_character - char specifier
+* @args: struct
+* Return: return character lenth otherwise false
 */
 int pt_character(va_list args)
 {
