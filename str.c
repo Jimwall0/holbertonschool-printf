@@ -2,7 +2,7 @@
 #include <string.h>
 /**
  * pt_str - str
- *
+ * @args: structure
  * Return: str
  */
 int pt_str(va_list args)
