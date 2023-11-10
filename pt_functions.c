@@ -1,15 +1,19 @@
 #include "main.h"
 /**
-* pt_char - char specifier
-* Return: ..
+* pt_character - char specifier
+* @args: struct
+* Return: return character lenth otherwise false
 */
 int pt_character(va_list args)
 {
-  char temp = va_arg(args, int);
-  if (!temp)
-    {
-      return (-1);
-    }
-  _putchar(temp);
-  return (1);
+/*grabs the specified arguement*/
+char temp = va_arg(args, int);
+/*checks variable*/
+if (!temp)
+{
+return (-1);
+}
+/*prints and returns character length*/
+_putchar(temp);
+return (1);
 }
